@@ -6,7 +6,7 @@ public class CalculatorTest {
     @BeforeAll
     public static void beforeAllMethod(){
         calculator = new Calculator();
-        System.out.println("BeforeALl");
+        System.out.println("BeforeAll");
     }
     @BeforeEach
     public void beforeEachMethod(){
@@ -34,10 +34,24 @@ public class CalculatorTest {
         Assertions.assertEquals(result,6);
     }
 
+    @Test
     public void divideTest(){
         //Calculator calculator = new Calculator();
         int result = calculator.divide(2,3);
         Assertions.assertEquals(result,0);
+    }
+
+    @Test
+    public void moduloTest(){
+        int result = calculator.modulo(9,2);
+        Assertions.assertEquals(1,result);
+    }
+
+
+
+    @AfterEach
+    public void afterEachMethod(){
+        System.out.println("AfterEach");
     }
 
     @AfterAll
@@ -45,10 +59,6 @@ public class CalculatorTest {
         System.out.println("AfterALl");
     }
 
-    @AfterEach
-    public void afterEachMethod(){
-        calculator = new Calculator();
-        System.out.println("AfterEach");
-    }
+
 
 }
